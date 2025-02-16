@@ -5,6 +5,7 @@ using System.Data;
 using Unity.Notifications.Android;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using UnityEngine.WSA;
 
 public class GameController : MonoBehaviour
@@ -15,6 +16,11 @@ public class GameController : MonoBehaviour
     public float flakCooldown, flakTimer, laserCooldown, laserTimer, cannonCooldown, cannonTimer;
     public Text enemyTextList;
     public GameObject panelHolder;
+
+
+    //Screen Parameters
+    public int verticalBorder, horizontalBorder, verticalSpacing, horizontalSpacing;
+    private Vector3 panelSize; //derived from borders and spacing
 
     public GameObject blankPanelPrefab, buttonPanelPrefab;
 
@@ -31,7 +37,14 @@ public class GameController : MonoBehaviour
         flakCooldown = 4;
         flakTimer = 0;
 
-        panelHolder.AddComponent<PanelHolderBehavior>();
+        panelSize = new Vector3((Screen.width-horizontalBorder)/panelHolder.GetComponent<PanelHolderBehavior>().holderWidth-horizontalSpacing,(Screen.height-verticalBorder)/panelHolder.GetComponent<PanelHolderBehavior>().holderHeight-verticalSpacing);
+        Debug.Log(panelSize.ToString());
+        PanelHolderBehavior phb = panelHolder.GetComponent<PanelHolderBehavior>();
+        phb.panelSize = panelSize;
+        phb.verticalBorder = verticalBorder;
+        phb.horizontalBorder = horizontalBorder;
+        phb.verticalSpacing = verticalSpacing;
+        phb.horizontalSpacing = horizontalSpacing;
     }
 
     // Update is called once per frame
@@ -122,7 +135,7 @@ public class GameController : MonoBehaviour
             toAdd = Instantiate(blankPanelPrefab);
         } else { toAdd = panel; }
 
-        toAdd.transform.parent = panelHolder.transform;
+        toAdd.transform.SetParent(panelHolder.transform);
 
         PanelHolderBehavior ph = panelHolder.GetComponent<PanelHolderBehavior>();
         ph.panelList.Add(toAdd);

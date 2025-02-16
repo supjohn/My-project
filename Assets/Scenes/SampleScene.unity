@@ -223,7 +223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &678283322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -236,7 +236,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1949915991}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -407,6 +407,10 @@ MonoBehaviour:
   cannonTimer: 0
   enemyTextList: {fileID: 678283323}
   panelHolder: {fileID: 2020175254}
+  verticalBorder: 160
+  horizontalBorder: 160
+  verticalSpacing: 160
+  horizontalSpacing: 160
   blankPanelPrefab: {fileID: 3956323985661586930, guid: 33f6da7e5eaca3d40a712026111e86a0, type: 3}
   buttonPanelPrefab: {fileID: 8219898948837031012, guid: 4f1615c9fa3c1e24696608aaabc4db6c, type: 3}
 --- !u!1 &1949915987
@@ -500,8 +504,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 678283322}
   - {fileID: 2020175255}
+  - {fileID: 678283322}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -521,6 +525,7 @@ GameObject:
   - component: {fileID: 2020175255}
   - component: {fileID: 2020175257}
   - component: {fileID: 2020175256}
+  - component: {fileID: 2020175258}
   m_Layer: 5
   m_Name: OverPanel
   m_TagString: Untagged
@@ -540,7 +545,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1949915991}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -585,3 +590,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020175254}
   m_CullTransparentMesh: 1
+--- !u!114 &2020175258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020175254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16ff9e8c37647943ae868cefd637c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outerPanel: {fileID: 0}
+  holderWidth: 3
+  holderHeight: 2
+  heightOffset: 40
+  widthOffset: 100
+  panelList: []
+  verticalBorder: 0
+  horizontalBorder: 0
+  verticalSpacing: 0
+  horizontalSpacing: 0
+  panelSize: {x: 0, y: 0, z: 0}

@@ -59,10 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\ButtonPanelBehavior.cs" />
+    <Compile Include="Assets\Scripts\PanelHolderBehavior.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\BasicPanelBehavior.cs" />
-    <Compile Include="Assets\Scripts\PanelHolderBehavior.cs" />
-    <Compile Include="Assets\Scripts\ButtonPanelBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
